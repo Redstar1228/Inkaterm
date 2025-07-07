@@ -1,0 +1,33 @@
+name: 🚀 Publish Inkaterm to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*'  # فقط وقتی تگی مثل v1.0.0 پوش بشه، اجرا میشه
+
+jobs:
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 🔧 Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: 🛠️ Build the package
+        run: python -m build
+
+      - name: 📤 Upload to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
