@@ -34,8 +34,8 @@ def main(file, char, same):
         x.append(colored(char, n, on_color = f"on_{n}" if same else None))
     z = 0
     y = ppm(file, "size").split()
-    for row in range(int(y[0])):
-        for col in range(int(y[1])):
+    for row in range(int(y[1])):
+        for col in range(int(y[0])):
             theImage += x[z]
             z += 1
             time.sleep(0.00000001)
