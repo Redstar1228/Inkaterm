@@ -3,7 +3,7 @@ name: 🚀 Publish Inkaterm to PyPI
 on:
   push:
     tags:
-      - 'v*'  # فقط وقتی تگی مثل v1.0.0 پوش بشه، اجرا میشه
+      - 'v*'
 
 jobs:
   build-and-publish:
@@ -22,12 +22,14 @@ jobs:
       - name: 🔧 Install build dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install build
+          pip install build twine
 
       - name: 🛠️ Build the package
         run: python -m build
 
-      - name: 📤 Upload to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: 📤 Upload to PyPI (manual)
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          twine upload dist/*
