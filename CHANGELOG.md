@@ -1,3 +1,3 @@
 ## Update Changes
-+ Image size bug fixed
-+ more accuracy
++ **module importing bug fixed**
++ color bug fixed
