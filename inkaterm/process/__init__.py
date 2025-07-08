@@ -1,6 +1,5 @@
 from inkaterm.procces.reader import ppm
 from termcolor import colored
-import time
 
 def main(file, char, same):
     theImage = ""
@@ -16,7 +15,7 @@ def main(file, char, same):
             n = "black"
         elif r > g and b > g and b > 100 and r > 100 and (r - g > 60 or b - g > 60):
             n = "magenta"
-        elif r < g and b > 40:
+        elif r < g and b > 40 and r - b < -30:
             if b < 100:
                 n = "blue"
             else:
@@ -38,6 +37,5 @@ def main(file, char, same):
         for col in range(int(y[0])):
             theImage += x[z]
             z += 1
-            time.sleep(0.00000001)
         theImage += "\n"
     return theImage
