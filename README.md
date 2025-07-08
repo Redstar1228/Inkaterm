@@ -1,3 +1,4 @@
+![Downloads](https://static.pepy.tech/personalized-badge/inkaterm?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)
 # 🔏 Inkaterm
 + Inkaterm writes a png file pixel-by-pixel with approximate colors
 ## 🎨 Features
