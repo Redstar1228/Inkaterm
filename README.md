@@ -1,4 +1,4 @@
-![Downloads](https://static.pepy.tech/personalized-badge/inkaterm?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)
+![Downloads](https://static.pepy.tech/personalized-badge/inkaterm?period=total&units=international_system&left_color=grey&right_color=blue&left_text=Downloads) [![GitHub stars](https://img.shields.io/github/stars/Redstar1228/Inkaterm?style=social)](https://github.com/Redstar1228/Inkaterm)
 # 🔏 Inkaterm
 + Inkaterm writes a png file pixel-by-pixel with approximate colors
 ## 🎨 Features
