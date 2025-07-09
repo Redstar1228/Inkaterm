@@ -27,3 +27,5 @@ ink(file = "path/to/image.png", char = "# ", same = True)
 ### same
 + if same was True, ASCII chars haves background and if same was False, ASCII chars don't have any background
 + default same = True
+## 🌟 Featured on
+- [LibHunt – Inkaterm](https://www.libhunt.com/r/Inkaterm)
