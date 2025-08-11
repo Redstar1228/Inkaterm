@@ -37,4 +37,3 @@ ink(file = "path/to/image.png", char = "# ", same = True, pro = data)
 #### pro features
 ##### report
 + if report was True the image details and time will save in a json file to save your history
-+ default report = False
