@@ -1,3 +1,2 @@
 ## Update Changes
-+ pro argument added
-+ report added
++ Immediate bug fix
