@@ -10,7 +10,7 @@ from .. import db
 def main(file: str, char: any, same: bool, pro: dict):
     idb = loads(pkg.files(db).joinpath("idb.json").open("r", encoding="utf-8").read())
     key = sha512(pro["key"].strip().encode()).hexdigest()
-    if pro["key"] == None or key in idb["license"].values():
+    if pro["key"] == "None" or key in idb["license"].values():
         theImage = ""
         x = []
         line = """
