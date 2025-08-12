@@ -1,2 +1,4 @@
 ## Update Changes
-+ Immediate bug fix
++ history function added
++ history panel added
++ 1 easterEgg added
