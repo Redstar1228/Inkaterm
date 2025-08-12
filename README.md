@@ -13,6 +13,7 @@
 pip install inkaterm
 ```
 ## 🚀 Usage
+for return a image:
 ```Python
 from inkaterm import *
 
@@ -22,7 +23,15 @@ data = {
 }
 ink(file = "path/to/image.png", char = "# ", same = True, pro = data)
 ```
+for show the history:
+```Python
+from inkaterm import *
+
+ops = ["delete", "show", "nothing"]
+history(key = "YOUR_KEY", op = ops[0 or 1 or 2])
+```
 ## ⚙️ parameters
+## 🔏 ink
 ### file
 + The file that will be printed
 ### char
@@ -34,6 +43,13 @@ ink(file = "path/to/image.png", char = "# ", same = True, pro = data)
 ### pro
 + pro is a dictionary with a main key named **key**. The key is a unique key created specifically for you. You can get a key as a 32-character text for yourself for 50 cents, with any cryptocurrency! if you don't have a key, you can't use any pro feature, and you can't copy another key but keys hashed by sha512 😏
 + message to **aliakbarzarei41@gmail.com** to buying a key.
+## history
+### key
++ your pro key
+### op
++ the operation that will be performed
++ default op = nothing
++ if op equal to "delete" all history will be deleted
 #### pro features
 ##### report
 + if report was True the image details and time will save in a json file to save your history
