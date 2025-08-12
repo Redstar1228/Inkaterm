@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='inkaterm',
-    version='1.1.0',
+    version='1.2.0',
     description='Convert PNG images to ASCII colored art',
     author='redstar1228',
     author_email='aliakbarzarei41@gmail.com',
