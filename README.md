@@ -17,18 +17,14 @@ for return a image:
 ```Python
 from inkaterm import *
 
-data = {
-    "key": "YOUR_KEY",
-    "report": True,
-}
-ink(file = "path/to/image.png", char = "# ", same = True, pro = data)
+ink(file = "path/to/image.png", char = "# ", same = True, report = False)
 ```
 for show the history:
 ```Python
 from inkaterm import *
 
 ops = ["delete", "show", "nothing"]
-history(key = "YOUR_KEY", op = ops[0 or 1 or 2])
+history(op = ops[0 or 1 or 2])
 ```
 ## ⚙️ parameters
 ## 🔏 ink
@@ -40,16 +36,11 @@ history(key = "YOUR_KEY", op = ops[0 or 1 or 2])
 ### same
 + if same was True, ASCII chars have background and if same was False, ASCII chars don't have any background
 + default same = True
-### pro
-+ pro is a dictionary with a main key named **key**. The key is a unique key created specifically for you. You can get a key as a 32-character text for yourself for 50 cents, with any cryptocurrency! if you don't have a key, you can't use any pro feature, and you can't copy another key but keys hashed by sha512 😏
-+ message to **aliakbarzarei41@gmail.com** to buying a key
+### report
++ if report was True, file name, file format, image size and date and time will be saved in a json file.
++ default report = True
 ## history
-### key
-+ your pro key
 ### op
 + the operation that will be performed
 + default op = nothing
 + if op equal to "delete" all history will be deleted
-#### pro features
-##### report
-+ if report was True the image details and time will save in a json file to save your history
