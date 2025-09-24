@@ -1,24 +1,14 @@
 from inkaterm.procces.reader import ppm
 from termcolor import colored
-from json import loads, dump
-from hashlib import sha512
 from datetime import datetime as time
+from json import loads, dump
 import os
-import importlib.resources as pkg
-from .. import db
 
-def main(file: str, char: any, same: bool, pro: dict):
-    idb = loads(pkg.files(db).joinpath("idb.json").open("r", encoding="utf-8").read())
-    key = sha512(pro["key"].strip().encode()).hexdigest()
-    if pro["key"] == "None" or key in idb["license"].values():
+def main(file: str, char: any, same: bool, report: bool) -> str:
+    if True:
+        name = "report"
         theImage = ""
         x = []
-        line = """
-        """
-        name = ""
-        for i in idb["license"]:
-            if idb["license"][i] == key:
-                name = i
         img = ppm(file)
         for i in img:
             r = int(i[0])
@@ -51,20 +41,19 @@ def main(file: str, char: any, same: bool, pro: dict):
                 theImage += x[z]
                 z += 1
             theImage += "\n"
-        if key in idb["license"].values():
-            if pro["report"]:
+        if report:
+            if True:
                 details = {
                     "size": [y[0], y[1]],
                     "name": file,
                     "format": file.split(".")[-1]
                 }
             
-                if not os.path.exists(f"inkatermReports/{name}.json"):
+                if not os.path.exists("inkatermReports"):
                     os.mkdir("inkatermReports")
+                if not os.path.exists(f"inkatermReports/{name}.json"):
                     open(f"inkatermReports/{name}.json", "w").write("{}")
-                file = loads(open(f"inkatermReports/{name}.json", "r").read())
-                file[time.now().strftime("%Y:%m:%d:%H:%M:%S") + f":{time.now().microsecond // 1000:03d}"] = details
-                dump(file, open(f"inkatermReports/{name}.json", "w"))
-        return theImage
-    else:
-        print("invalid key\nif you don't have a pro key, you can buy now with lower than 1$ with any crypto!")
+                fil = loads(open(f"inkatermReports/{name}.json", "r").read())
+                fil[time.now().strftime("%Y:%m:%d:%H:%M:%S") + f":{time.now().microsecond // 1000:03d}"] = details
+                dump(fil, open(f"inkatermReports/{name}.json", "w"), sort_keys = True)
+        return theImage      
