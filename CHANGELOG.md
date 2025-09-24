@@ -1,4 +1,4 @@
 ## Update Changes
-+ history function added
-+ history panel added
-+ 1 easterEgg added
++ all pro features are now **Free**
++ bug fixes
++ 1 easterEgg updated
