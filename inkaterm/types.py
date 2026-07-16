@@ -1,13 +1,14 @@
 from PIL import Image as Img
 from io import BytesIO
+from pathlib import Path
 from .editors.filters import Filter
 from .utils import open_image, type_handler
 from .outputs.render import Render
-from .exceptions import InvalidSizeError, InvalidTypeError
+from .exceptions import InvalidSizeError, InvalidTypeError, FileDoesNotExistsError
 
 class Image(Render):
     def __init__(self, file, char, fill_background, cache, cache_dir, true_color):
-        type_handler(False, char = char, fill_background = fill_background, cache = cache, cache_dir = cache_dir, true_color = true_color)
+        type_handler(False, file = file, char = char, fill_background = fill_background, cache = cache, cache_dir = cache_dir, true_color = true_color)
         self._fill_background = fill_background
         self._cache = cache
         self._cache_dir = cache_dir
@@ -16,7 +17,7 @@ class Image(Render):
         if isinstance(file, (str, BytesIO)):
             image = open_image(file)
         elif isinstance(file, (bytes, memoryview, bytearray)):
-            image = open_image((BytesIO(file)))
+            image = open_image(BytesIO(file))
         self.filter = Filter(image, self._char, fill_background, self._cache, self._cache_dir, true_color)
     
     def __repr__(self):
@@ -38,3 +39,11 @@ class Image(Render):
             raise InvalidSizeError("height and width must be bigger than zero")
         self.filter.update_image(self.filter.img.resize((width, height), Img.LANCZOS))
         return self
+    
+    def save(self, path) -> bool:
+        type_handler(False, path = path)
+        if not Path(path).parent.exists():
+            raise FileDoesNotExistsError(f"directory for {path} does not exist")
+        with open(path, "w", encoding = "utf-8") as f:
+            f.write(str(self))
+        return True

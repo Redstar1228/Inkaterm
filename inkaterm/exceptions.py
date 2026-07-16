@@ -9,3 +9,6 @@ class InvalidSizeError(Exception):
 
 class FilterError(Exception):
     pass
+
+class FileDoesNotExistsError(Exception):
+    pass

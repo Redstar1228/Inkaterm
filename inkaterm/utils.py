@@ -22,7 +22,8 @@ TYPE_RULES = {
         "value": (int, float),
         "factor": (int, float),
         "radius": (int, float),
-        "amount": (int, float)
+        "amount": (int, float),
+        "path": (str,)
     }
 
 def open_image(path):

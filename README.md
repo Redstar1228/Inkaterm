@@ -56,13 +56,13 @@ print(image)
 ### ANSI TrueColor
 
 <p align="center">
-    <img src="images/true_color.jpg" width="600" alt="TrueColor Preview">
+    <img src="https://raw.githubusercontent.com/Redstar1228/Inkaterm/main/images/true_color.jpg" width="600" alt="TrueColor Preview">
 </p>
 
 ### ANSI 256 Colors
 
 <p align="center">
-    <img src="images/256_color.jpg" width="600" alt="256 Color Preview">
+    <img src="images/https://raw.githubusercontent.com/Redstar1228/Inkaterm/main/images/256_color.jpg" width="600" alt="256 Color Preview">
 </p>
 
 > All screenshots were captured inside the Termux terminal.
@@ -308,6 +308,50 @@ image.filter \
     .grayscale() \
     .contrast(1.5) \
     .brightness(20)
+```
+
+---
+
+## Rendering
+
+```python
+print(image)
+```
+
+or
+
+```python
+str(image)
+```
+
+---
+
+## `save()`
+
+Save rendered ASCII art to a text file.
+
+```python
+image.save("output.txt")
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `path` | `str` | Output file path. |
+
+Returns:
+
+```python
+True
+```
+
+Example:
+
+```python
+image = ink.image("cat.png")
+
+image.resize(80, 80)
+
+image.save("cat_ascii.txt")
 ```
 
 ---
