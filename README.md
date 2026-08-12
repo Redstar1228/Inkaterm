@@ -62,7 +62,7 @@ print(image)
 ### ANSI 256 Colors
 
 <p align="center">
-    <img src="images/https://raw.githubusercontent.com/Redstar1228/Inkaterm/main/images/256_color.jpg" width="600" alt="256 Color Preview">
+    <img src="https://raw.githubusercontent.com/Redstar1228/Inkaterm/main/images/256_color.jpg" width="600" alt="256 Color Preview">
 </p>
 
 > All screenshots were captured inside the Termux terminal.
@@ -298,6 +298,11 @@ image.filter.apply(red, green, blue)
 | `neon_green()` | Apply a neon green effect. |
 | `dreamy()` | Apply a dreamy color effect. |
 | `dark_mood()` | Apply a dark mood effect. |
+| `warm()` | Apply a warm orange tint. |
+| `frost()` | Apply a cool icy-blue tint. |
+| `golden()` | Apply a golden amber glow. |
+| `sunset()` | Apply a warm sunset palette. |
+| `mint()` | Apply a fresh mint-green tint. |
 
 Every filter returns the current `Filter` object, allowing method chaining.
 

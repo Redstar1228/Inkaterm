@@ -88,3 +88,23 @@ class Filter(Render):
     def dark_mood(self):
         self.apply(0.6, 0.6, 0.8)
         return self
+    
+    def warm(self):
+        self.apply(1.15, 1.0, 0.85)
+        return self
+    
+    def frost(self):
+        self.apply(0.85, 1.0, 1.25)
+        return self
+    
+    def golden(self):
+        self.apply(1.25, 1.05, 0.6)
+        return self
+    
+    def sunset(self):
+        self.apply(1.3, 0.8, 0.9)
+        return self
+    
+    def mint(self):
+        self.apply(0.8, 1.2, 0.9)
+        return self

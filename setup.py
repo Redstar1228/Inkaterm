@@ -5,7 +5,7 @@ README = Path("README.md").read_text(encoding="utf-8")
 
 setup(
     name = "inkaterm",
-    version = "2.0.1",
+    version = "2.0.2",
     description = "Convert PNG images to ASCII colored art",
     author = "Redstar1228",
     author_email = "aliakbarzarei41@gmail.com",
